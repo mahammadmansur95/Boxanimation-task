@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Animation</title>
+    <style>
+      .border {
+        border: 10px solid black;
+        background-color: black;
+        width: 750px;
+        height: 200px;
+        margin: 100px auto;
+        display: flex;
+        transform: rotate(180deg);
+      }
+      .Buttons {
+        width: 750px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .color_1 {
+        width: 150px;
+        height: 200px;
+        background-color: purple;
+      }
+      .color_2 {
+        width: 150px;
+        height: 100%;
+        background-color: pink;
+      }
+      .color_3 {
+        width: 150px;
+        height: 100%;
+        background-color: rosybrown;
+      }
+      .color_4 {
+        width: 150px;
+        height: 100%;
+        background-color: yellow;
+      }
+      .color_5 {
+        width: 150px;
+        height: 100%;
+        background-color: orange;
+      }
+
+      .anime_1 {
+        animation: one 2s infinite alternate;
+      }
+
+      .anime_2 {
+        animation: two 2s infinite alternate;
+      }
+
+      .anime_3 {
+        animation: three 2s infinite alternate;
+      }
+
+      .anime_4 {
+        animation: four 2s infinite alternate;
+      }
+
+      .anime_5 {
+        animation: five 2s infinite alternate;
+      }
+
+      .paused {
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+        -o-animation-play-state: paused;
+        animation-play-state: paused;
+      }
+
+      @keyframes one {
+        0% {
+          height: 20px;
+        }
+        25% {
+          height: 50px;
+        }
+        50% {
+          height: 75px;
+        }
+        75% {
+          height: 120px;
+        }
+        100% {
+          height: 180px;
+        }
+      }
+      @keyframes two {
+        0% {
+          height: 200px;
+        }
+        25% {
+          height: 150px;
+        }
+        50% {
+          height: 90px;
+        }
+        100% {
+          height: 20px;
+        }
+      }
+      @keyframes three {
+        0% {
+          height: 0px;
+        }
+        25% {
+          height: 50px;
+        }
+        50% {
+          height: 120px;
+        }
+        75% {
+          height: 85px;
+        }
+        100% {
+          height: 200px;
+        }
+      }
+      @keyframes four {
+        0% {
+          height: 200px;
+        }
+        25% {
+          height: 170px;
+        }
+        50% {
+          height: 110px;
+        }
+        75% {
+          height: 50px;
+        }
+        100% {
+          height: 10px;
+        }
+      }
+      @keyframes five {
+        0% {
+          height: 0px;
+        }
+        25% {
+          height: 70px;
+        }
+        50% {
+          height: 100px;
+        }
+        75% {
+          height: 150px;
+        }
+        100% {
+          height: 190px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border">
+      <div class="color_1"></div>
+      <div class="color_2"></div>
+      <div class="color_3"></div>
+      <div class="color_4"></div>
+      <div class="color_5"></div>
+    </div>
+    <div class="Buttons">
+      <button
+        style="
+          margin: 10px;
+          width: 100px;
+          background-color: green;
+          color: white;
+        "
+        class="start"
+        onclick="startFun()"
+      >
+        Start
+      </button>
+      <button
+        style="margin: 10px; width: 100px; background-color: red; color: white"
+        class="stop"
+        onclick="stopFun()"
+      >
+        Stop
+      </button>
+    </div>
+    <script>
+      let color1 = document.getElementsByClassName('color_1');
+      let color2 = document.getElementsByClassName('color_2');
+      let color3 = document.getElementsByClassName('color_3');
+      let color4 = document.getElementsByClassName('color_4');
+      let color5 = document.getElementsByClassName('color_5');
+      function startFun() {
+        color1[0].classList.add('anime_1');
+        color2[0].classList.add('anime_2');
+        color3[0].classList.add('anime_3');
+        color4[0].classList.add('anime_4');
+        color5[0].classList.add('anime_5');
+      }
+
+      function stopFun() {
+        color1[0].classList.toggle('paused');
+        color2[0].classList.toggle('paused');
+        color3[0].classList.toggle('paused');
+        color4[0].classList.toggle('paused');
+        color5[0].classList.toggle('paused');
+      }
+      let stop_btn = document.getElementsByClassName('stop');
+    </script>
+  </body>
+</html>
